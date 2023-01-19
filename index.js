@@ -15,23 +15,48 @@ const menu = () => { //Debuggin version , need trimming
         }while(controller);
 }
 
-const contentPrinter = (content) =>{
-	//prints labels and content	
+const contentPrinter = (userChoice, content) => {
+	let label_ano = "Ano:";
+	let label_salario = "Salário mínimo:";
+	let label_cresciSal = "Crescimento salarial:";
+	let label_ipca = "Inflação IPCA:";
+	let outputController = userChoice;
+	if(outputController===1){//exibiçao caso opção 1
+		console.log(label_ano.padEnd(20,'.') + content.ano);
+		console.log(label_salario.padEnd(20,'.') + content.salario);
+	}
+	else if(outputController===2){//exibiçao caso opção 2
+		console.log(label_ano.padEnd(20,'.') + content.ano);
+		console.log(label_ipca.padEnd(20,'.') + content.ipca);
+	}
+	else if(outputController===3){//exibiçao caso opção 3
 
+		console.log(label_ano.padEnd(20,'.') + content.ano);
+		console.log(label_salario.padEnd(20,'.') + content.salario);
+		console.log(label_cresciSal.padEnd(20,'.') + content.cresciSal);
+		console.log(label_ipca.padEnd(20,'.') + content.ipca);
+	}
 }
 
-const userChoice1 = (array_db) => { //handles content and calls printer
-	
+const userChoice1 = (array_db) => {
+	for(){ // depends on db, change must be made
+		let content = {ano: array_db.ano, salario: array_db.salario}
+		
+	}
 }
 
-const userChoice2 = (array_db) => { //handles content and calls printer
-	
+const userChoice2 = (array_db) => {
+	for(){ // depends on db, change must be made
+		let content = {ano: array_db.ano, ipca: array_db.ipca}
+		
+	}
 }
 
 
-const userChoice3 = (array_db) => { //handles content and calls printer
-	
+const userChoice3 = (array_db) => {
+	for(){ // depends on db, change must be made
+		let content = {ano: array_db.ano, salario: array_db.salario, cresciSal: array_db.cresciSal, ipca: array_.db.ipca}
+		
+	}
 }
-
-
 menu();
