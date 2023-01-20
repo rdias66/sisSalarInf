@@ -1,4 +1,5 @@
 import rl from 'readline-sync';
+import {salarios_array , ipca_array} from './data_collection.js';
 
 
 const menu = () => { //Debuggin version , need trimming
