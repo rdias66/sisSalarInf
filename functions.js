@@ -44,7 +44,7 @@ const optionController = (userChoice, content) => {
             let cresciSal = (diferenca/salarioAnterior)*100; 
             console.log(label_ano.padEnd(20,'.') + ano);
 	    console.log(label_salario.padEnd(20,'.') + salario);
-	    console.log(label_cresciSal.padEnd(20,'.') + cresciSal);
+	    console.log(label_cresciSal.padEnd(20,'.') + cresciSal.toFixed(2));
 	    console.log(label_ipca.padEnd(20,'.') + ipca);
           }
 	}
