@@ -27,23 +27,25 @@ const optionController = (userChoice, content) => {
           } 
 	}
 	else if(outputController===2){//exibiçao caso opção 2
-	      	for(let ano of content){
+	    for(let ano of content){
             let ano = content.ano;
             let ipca = content.ipca;
             console.log(label_ano.padEnd(20,'.') + ano);	      
             console.log(label_ipca.padEnd(20,'.') + ipca);
-        }
+            }
 	}
 	else if(outputController===3){//exibiçao caso opção 3
-          for(let ano of content){
-            let ano = content.ano;
-            let salario = content.salario;
-            let ipca = content.ipca;
-            let cresciSal = 0; //falta configurar tratamento de dados aqui
+          for(let i=0;i<content.length;i++){
+            let ano = content[i].ano;
+            let salario = content[i].salario;
+            let ipca = content[i].ipca;
+  	    let salarioAnterior = (i !== 0) ? content[i-1] : 0;	
+	    let diferenca = salario - salarioAnterior;	  
+            let cresciSal = (diferenca/salarioAnterior)*100; 
             console.log(label_ano.padEnd(20,'.') + ano);
-		        console.log(label_salario.padEnd(20,'.') + salario);
-		        console.log(label_cresciSal.padEnd(20,'.') + cresciSal);
-		        console.log(label_ipca.padEnd(20,'.') + ipca);
+	    console.log(label_salario.padEnd(20,'.') + salario);
+	    console.log(label_cresciSal.padEnd(20,'.') + cresciSal);
+	    console.log(label_ipca.padEnd(20,'.') + ipca);
           }
 	}
 
