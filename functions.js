@@ -1,4 +1,4 @@
-const menu = (content) => { //Debuggin version , need trimming
+const menu = (content) => {
   let controller = true;
   do {
     let localContent = content;
@@ -19,7 +19,7 @@ const optionController = (userChoice, content) => {
 	let label_ipca = "Inflação IPCA:";
 	let outputController = userChoice;
 	if(outputController===1){//exibiçao caso opção 1
-		      for(let ano of content){
+ 	    for(let ano of content){
             let ano = content.ano;
             let salario = content.salario;
              console.log(label_ano.padEnd(20,'.') + ano);
@@ -35,11 +35,11 @@ const optionController = (userChoice, content) => {
             }
 	}
 	else if(outputController===3){//exibiçao caso opção 3
-          for(let i=0;i<content.length;i++){
+          for(let i=0;i<content.length;i++){ // for tradicional utilizado para acesso a indice anterior
             let ano = content[i].ano;
             let salario = content[i].salario;
             let ipca = content[i].ipca;
-  	    let salarioAnterior = (i !== 0) ? content[i-1] : 0;	
+  	    let salarioAnterior = (i !== 0) ? content[i-1] : 0;	//compara com mes anterior
 	    let diferenca = salario - salarioAnterior;	  
             let cresciSal = (diferenca/salarioAnterior)*100; 
             console.log(label_ano.padEnd(20,'.') + ano);
